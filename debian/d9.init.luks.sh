@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 rm -rf /etc/apt/sources.list*
 cat > /etc/apt/sources.list <<END
 deb http://mirrors.aliyun.com/debian/ stretch main non-free contrib
@@ -16,3 +17,4 @@ apt-get -y install yubikey-luks yubikey-personalization
 cd /usr/lib && git clone https://github.com/cornelinux/yubikey-luks.git
 cd yubikey-luks; cp yubikey-luks-suspend.service /etc/systemd/system; systemctl enable yubikey-luks-suspend.service
 
+ifconfig
