@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+cat > /etc/resolv.conf <<END
+nameserver 223.5.5.5
+nameserver 114.114.115.115
+nameserver 1.2.4.8
+END
 rm -rf /etc/apt/sources.list*
 cat > /etc/apt/sources.list <<END
 deb http://mirrors.aliyun.com/debian/ stretch main non-free contrib
