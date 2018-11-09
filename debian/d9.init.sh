@@ -8,7 +8,7 @@ rm -rf /etc/apt/sources.list*
 cat > /etc/apt/sources.list <<END
 deb http://mirrors.ustc.edu.cn/debian stable main contrib non-free
 deb http://mirrors.ustc.edu.cn/debian stable-updates main contrib non-free
-deb http://mirrors.ustc.edu.cn/debian/ testing main
+#deb http://mirrors.ustc.edu.cn/debian/ testing main
 END
 cat > /root/.vimrc <<END
 syntax on
