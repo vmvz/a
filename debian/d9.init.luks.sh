@@ -13,7 +13,7 @@ END
 apt-get -q -y update
 apt-get -y install net-tools htop lrzsz vim wget screen curl git build-essential
 
-apt-get -y install yubikey-luks yubikey-personalization
+apt-get -y install yubikey-luks yubikey-personalization yubico-piv-tool
 cd /usr/lib && git clone https://github.com/cornelinux/yubikey-luks.git
 cd yubikey-luks && chmod 700 *;cp yubikey-luks-open /usr/bin; cp ykluks.cfg /etc/; cp yubikey-luks-suspend.service /etc/systemd/system; systemctl enable yubikey-luks-suspend.service
 

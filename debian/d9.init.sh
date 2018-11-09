@@ -14,6 +14,18 @@ deb http://mirrors.aliyun.com/debian/ stretch-updates main non-free contrib
 deb-src http://mirrors.aliyun.com/debian/ stretch-updates main non-free contrib
 deb http://mirrors.aliyun.com/debian/ stretch-backports main non-free contrib
 deb-src http://mirrors.aliyun.com/debian/ stretch-backports main non-free contrib
+#deb http://mirrors.163.com/debian/ sid contrib main non-free
+#deb-src http://mirrors.163.com/debian/ sid contrib main non-free
+END
+cat > /root/.vimrc <<END
+syntax on
+set clipboard+=unnamed
+set nu
+set showmatch
+set hlsearch
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 END
 apt-get -q -y update
 apt-get -y install net-tools htop lrzsz vim wget screen curl git build-essential
