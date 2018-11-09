@@ -6,9 +6,9 @@ nameserver 1.2.4.8
 END
 rm -rf /etc/apt/sources.list*
 cat > /etc/apt/sources.list <<END
-deb http://mirrors.ustc.edu.cn/debian stable main contrib non-free
-deb http://mirrors.ustc.edu.cn/debian stable-updates main contrib non-free
-#deb http://mirrors.ustc.edu.cn/debian/ testing main
+deb http://mirrors.163.com/debian stable main contrib non-free
+deb http://mirrors.163.com/debian stable-updates main contrib non-free
+deb http://mirrors.163.com/debian/ testing main
 END
 cat > /root/.vimrc <<END
 syntax on
