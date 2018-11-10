@@ -22,5 +22,5 @@ set shiftwidth=4
 END
 apt-get -q -y update
 apt-get -y install net-tools htop lrzsz vim wget screen curl git build-essential
-
+sed -i "s/^#PermitRootLogin.*$/PermitRootLogin yes/g" /etc/ssh/sshd_config;cat /etc/ssh/sshd_config|grep Root;service sshd restart
 ifconfig
