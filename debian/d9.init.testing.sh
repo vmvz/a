@@ -1,14 +1,47 @@
 #!/usr/bin/env bash
+cat > ~/.bashrc <<END
+alias ai='apt -y install '
+alias au='apt update'
+alias ap='apt purge '
+alias ac='apt-cache show '
+alias cpu='cat /proc/cpuinfo'
+alias ch='chmod 755 -R .'
+alias g='glances'
+alias h='htop'
+alias ll='ls -alh'
+alias ls="ls --color=auto"
+alias n='echo "nohup command > n.txt 2>&1 &"'
+
+# Nginx
+alias nr='/etc/init.d/nginx restart'
+alias nc='cd /etc/nginx/conf.d/'
+alias nt='nginx -t'
+alias nl='cd /var/log/nginx/'
+
+alias s='systemctl '
+alias sl='vim /etc/apt/sources.list'
+alias sv='source venv/bin/activate'
+alias snow='shutdown -h now'
+alias vimba='vim ~/.bashrc && source ~/.bashrc'
+alias vimrc='vim /etc/rc.local && cat /etc/rc.local'
+alias ww='cd /data/www;'
+END
+source ~/.bashrc
 cat > /etc/resolv.conf <<END
-nameserver 223.5.5.5
 nameserver 114.114.115.115
+nameserver 223.5.5.5
 nameserver 1.2.4.8
 END
 rm -rf /etc/apt/sources.list*
 cat > /etc/apt/sources.list <<END
-deb https://mirrors.aliyun.com/debian/ testing main contrib non-free
-deb https://mirrors.aliyun.com/debian/ testing-updates main contrib non-free
-deb https://mirrors.aliyun.com/debian-security/ testing/updates main contrib non-free
+<<<<<<< HEAD
+deb https://mirrors.163.com/debian/ testing main contrib non-free
+deb https://mirrors.163.com/debian/ testing-updates main contrib non-free
+deb https://mirrors.163.com/debian-security testing/updates main contrib non-free
+=======
+deb http://mirrors.163.com/debian stable main contrib non-free
+deb http://mirrors.163.com/debian stable-updates main contrib non-free
+>>>>>>> ba0a0aa8ace1c1b21fd58ef39e3c1a235f2a6b8d
 END
 cat > /root/.vimrc <<END
 syntax on
@@ -22,5 +55,5 @@ set shiftwidth=4
 END
 apt-get -q -y update
 apt-get -y install net-tools htop lrzsz vim wget screen curl git build-essential
-sed -i "s/^#PermitRootLogin.*$/PermitRootLogin yes/g" /etc/ssh/sshd_config;cat /etc/ssh/sshd_config|grep Root;service sshd restart
+sed -i "s/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=0/g" /etc/default/grub;cat /etc/default/grub|grep GRUB_TIMEOUT;update-grub2
 ifconfig
