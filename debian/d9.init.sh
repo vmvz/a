@@ -34,14 +34,9 @@ nameserver 1.2.4.8
 END
 rm -rf /etc/apt/sources.list*
 cat > /etc/apt/sources.list <<END
-<<<<<<< HEAD
-deb https://mirrors.163.com/debian/ testing main contrib non-free
-deb https://mirrors.163.com/debian/ testing-updates main contrib non-free
-deb https://mirrors.163.com/debian-security testing/updates main contrib non-free
-=======
-deb http://mirrors.163.com/debian stable main contrib non-free
-deb http://mirrors.163.com/debian stable-updates main contrib non-free
->>>>>>> ba0a0aa8ace1c1b21fd58ef39e3c1a235f2a6b8d
+deb https://mirrors.163.com/debian/ stable main contrib non-free
+deb https://mirrors.163.com/debian/ stable-updates main contrib non-free
+deb https://mirrors.163.com/debian-security stable/updates main contrib non-free
 END
 cat > /root/.vimrc <<END
 syntax on
